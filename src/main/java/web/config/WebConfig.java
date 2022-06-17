@@ -10,6 +10,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
+import web.dao.CarDao;
+import web.service.CarService;
 
 @Configuration
 @EnableWebMvc
@@ -40,6 +42,15 @@ public class WebConfig implements WebMvcConfigurer {
         return templateEngine;
     }
 
+    @Bean
+    public CarService getCarService() {
+        return new CarService();
+    }
+
+    @Bean
+    public CarDao getCarDao() {
+        return new CarDao();
+    }
 
     @Override
     public void configureViewResolvers(ViewResolverRegistry registry) {
