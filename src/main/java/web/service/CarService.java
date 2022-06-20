@@ -13,7 +13,7 @@ public class CarService {
     @Autowired
     private CarDao carDao;
 
-    public List<Car> getListOfParam(String parameter) {
-        return carDao.getListOfParam(parameter);
+    public List<Car> getListOfParam(int count) {
+        return carDao.getListOfParam(count);
     }
 }
